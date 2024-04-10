@@ -65,12 +65,12 @@ const handleGoogleLogin = async () => {
     <div className='flex justify-center bg-gray-800 py-10 min-h-screen' >
       { user ? (
         <div>
-        <div> Logged in as {user.displayName}</div>
-        <input
+        <div className={`text-white mb-2`}> Logged in as {user.displayName}</div>
+        <input className={`mr-2`}
           value={newMessage}
           onChange={e => setNewMessage(e.target.value)}
         />
-        <button className=' bg-white rounded-[10px] hover:bg-blue-400 p-3' onClick={sendMessage}>Send Message</button>
+        <button className=' bg-white rounded-[10px] hover:bg-blue-400 p-3 mr-2' onClick={sendMessage}>Send Message</button>
         <button className='mb-8 bg-white rounded-[10px] p-3' onClick={() => auth.signOut()}>Logout</button>
 
         <div className="flex flex-col gap-5">
@@ -87,7 +87,7 @@ const handleGoogleLogin = async () => {
         </div>
       ):
    
-      <button onClick={handleGoogleLogin}>Login with Google</button>
+      <button className={`bg-blue-500 w-44 h-14 rounded-xl text-white`} onClick={handleGoogleLogin}>Login with Google</button>
 }
       </div>
   )
